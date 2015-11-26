@@ -1,16 +1,17 @@
 package com.capgemini;
 
-import java.util.Date;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PrakplaceController {
 
-
+    @Autowired
+    FreeParkplacesService service;
     
     @RequestMapping("/freeParkplaces")
     public Parkplaces freeParkplaces() {
-        return new Parkplaces(1, new Date());
+        return service.getFreeParkPlaces();
     }
 }
