@@ -5,21 +5,21 @@
  */
 package com.capgemini.parking.groups;
 
-import com.capgemini.ParkingPlacesDTO;
+import com.capgemini.ParkingPlaceDTO;
 import java.util.Date;
 
 /**
  *
  * @author advena
  */
-public class ParkingPlaces {
+public class ParkingPlace {
 
     private CompanyName companyName;
     private ParkingStatus parkingStatus;
     private long lastUpdateTimestamp;
 
-    public ParkingPlacesDTO getParkingPlacesDTO() {
-        return new ParkingPlacesDTO(parkingStatus.getFree(), new Date(lastUpdateTimestamp));
+    public ParkingPlaceDTO getParkingPlacesDTO() {
+        return new ParkingPlaceDTO(parkingStatus.getFree(), new Date(lastUpdateTimestamp));
     }
     
 }

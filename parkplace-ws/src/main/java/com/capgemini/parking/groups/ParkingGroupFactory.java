@@ -10,5 +10,7 @@ package com.capgemini.parking.groups;
  * @author advena
  */
 public class ParkingGroupFactory {
+
+    public Parking
     
 }

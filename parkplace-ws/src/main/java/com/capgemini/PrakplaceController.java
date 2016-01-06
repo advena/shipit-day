@@ -11,7 +11,7 @@ public class PrakplaceController {
     private ParkingPlacesService parkingPlacesService;
 
     @RequestMapping("/capgemini")
-    public ParkingPlacesDTO getCapgemini() {
+    public ParkingPlaceDTO getCapgemini() {
         return parkingPlacesService.getForCapgemini();
     }
 

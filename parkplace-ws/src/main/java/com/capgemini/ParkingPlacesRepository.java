@@ -5,7 +5,7 @@
  */
 package com.capgemini;
 
-import com.capgemini.parking.groups.ParkingPlaces;
+import com.capgemini.parking.groups.ParkingPlace;
 
 /**
  *
@@ -13,7 +13,7 @@ import com.capgemini.parking.groups.ParkingPlaces;
  */
 class ParkingPlacesRepository {
 
-    ParkingPlaces getForCapgemini() {
+    ParkingPlace getForCapgemini() {
     }
     
 }

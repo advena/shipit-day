@@ -5,7 +5,7 @@
  */
 package com.capgemini;
 
-import com.capgemini.parking.groups.ParkingPlaces;
+import com.capgemini.parking.groups.ParkingPlace;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -17,8 +17,8 @@ class ParkingPlacesService {
     @Autowired
     ParkingPlacesRepository parkingPlacesRepository;
 
-    ParkingPlacesDTO getForCapgemini() {
-        ParkingPlaces capgeminiParkingPlaces = parkingPlacesRepository.getForCapgemini();
+    ParkingPlaceDTO getForCapgemini() {
+        ParkingPlace capgeminiParkingPlaces = parkingPlacesRepository.getForCapgemini();
         return capgeminiParkingPlaces.getParkingPlacesDTO();
         
     }

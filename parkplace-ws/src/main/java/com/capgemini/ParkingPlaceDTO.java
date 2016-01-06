@@ -11,12 +11,12 @@ import java.util.Date;
  *
  * @author advena
  */
-public class ParkingPlacesDTO {
+public class ParkingPlaceDTO {
 
     private final Integer freeParkplaces;
     private final Date lastDateUpdate;
 
-    public ParkingPlacesDTO(Integer freeParkplaces, Date lastDateUpdate) {
+    public ParkingPlaceDTO(Integer freeParkplaces, Date lastDateUpdate) {
         this.freeParkplaces = freeParkplaces;
         this.lastDateUpdate = lastDateUpdate;
     }

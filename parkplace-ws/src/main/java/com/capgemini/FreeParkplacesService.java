@@ -11,6 +11,6 @@ package com.capgemini;
  */
 public interface FreeParkplacesService {
 
-    public ParkingPlacesDTO getFreeParkPlaces();
+    public ParkingPlaceDTO getFreeParkPlaces();
     
 }
