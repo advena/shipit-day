@@ -9,8 +9,6 @@ package com.capgemini;
  *
  * @author advena
  */
-public interface FreeParkplacesService {
-
-    public ParkingPlacesDTO getFreeParkPlaces();
+class ParkingPlacesRespository {
     
 }

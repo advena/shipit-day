@@ -5,12 +5,15 @@
  */
 package com.capgemini;
 
+import com.capgemini.parking.groups.ParkingPlaces;
+
 /**
  *
  * @author advena
  */
-public interface FreeParkplacesService {
+class ParkingPlacesRepository {
 
-    public ParkingPlacesDTO getFreeParkPlaces();
+    ParkingPlaces getForCapgemini() {
+    }
     
 }

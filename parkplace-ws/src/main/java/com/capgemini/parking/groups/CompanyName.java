@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.capgemini;
+package com.capgemini.parking.groups;
 
 /**
  *
  * @author advena
  */
-public interface FreeParkplacesService {
+enum CompanyName {
 
-    public ParkingPlacesDTO getFreeParkPlaces();
-    
+    CAPGEMINI,
+    PFLEIDERER,
+    IDEA,
+    MERCK,
+    PORP;
 }

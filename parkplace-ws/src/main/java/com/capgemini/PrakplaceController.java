@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class PrakplaceController {
 
     @Autowired
-    FreeParkplacesService service;
-    
-    @RequestMapping("/freeParkplaces")
-    public Parkplaces freeParkplaces() {
-        return service.getFreeParkPlaces();
+    private ParkingPlacesService parkingPlacesService;
+
+    @RequestMapping("/capgemini")
+    public ParkingPlacesDTO getCapgemini() {
+        return parkingPlacesService.getForCapgemini();
     }
+
 }

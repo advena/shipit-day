@@ -17,10 +17,10 @@ import org.springframework.stereotype.Service;
 public class MockParkplaceServiceImpl implements FreeParkplacesService{
 
     @Override
-    public Parkplaces getFreeParkPlaces() {
+    public ParkingPlacesDTO getFreeParkPlaces() {
         Integer freePlaces = getFreePlaces();
         Date lastDate = getLastDate();
-        return new Parkplaces(freePlaces, lastDate);
+        return new ParkingPlacesDTO(freePlaces, lastDate);
     }
 
     private Integer getFreePlaces() {
