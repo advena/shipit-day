@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.capgemini.parking.groups;
+package com.capgemini.parking.places;
 
-import com.capgemini.somethingnew.Group;
-import com.capgemini.somethingnew.ParkPollGroupService;
-import com.capgemini.somethingnew.ParkPollGroups;
+import com.capgemini.parking.groups.Group;
+import com.capgemini.parking.groups.ParkPollGroupService;
+import com.capgemini.parking.groups.ParkPollGroups;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;

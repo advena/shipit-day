@@ -1,11 +1,12 @@
 package com.capgemini;
 
+import com.capgemini.parking.places.ParkingPlaceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PrakplaceController {
+public class PrakingPlacesController {
 
     @Autowired
     private ParkingPlacesService parkingPlacesService;

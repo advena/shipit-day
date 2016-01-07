@@ -5,8 +5,9 @@
  */
 package com.capgemini;
 
-import com.capgemini.parking.groups.ParkingPlace;
-import com.capgemini.parking.groups.ParkingPlaces;
+import com.capgemini.parking.places.ParkingPlaceDTO;
+import com.capgemini.parking.places.ParkingPlace;
+import com.capgemini.parking.places.ParkingPlaces;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

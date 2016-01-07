@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.capgemini.somethingnew;
+package com.capgemini.parking.groups;
 
 import java.util.List;
 import javax.xml.bind.annotation.XmlAttribute;

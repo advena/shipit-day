@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.capgemini.parking.groups;
+package com.capgemini.parking.places;
 
-import com.capgemini.ParkingPlaceDTO;
 import java.util.Date;
 
 /**
