@@ -15,4 +15,22 @@ public class PrakplaceController {
         return parkingPlacesService.getForCapgemini();
     }
 
+    @RequestMapping("/idea")
+    public ParkingPlaceDTO getForIdea() {
+        return parkingPlacesService.getForIdea();
+    }
+    @RequestMapping("/merck")
+    public ParkingPlaceDTO getForMerck() {
+        return parkingPlacesService.getForMerck();
+    }
+
+    @RequestMapping("/porp")
+    public ParkingPlaceDTO getForPorp() {
+        return parkingPlacesService.getForPorp();
+    }
+    @RequestMapping("/pfleiderer")
+    public ParkingPlaceDTO getForPfleiderer() {
+        return parkingPlacesService.getForPfleiderer();
+    }
+
 }

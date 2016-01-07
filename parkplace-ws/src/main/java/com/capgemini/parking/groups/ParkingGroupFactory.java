@@ -5,12 +5,70 @@
  */
 package com.capgemini.parking.groups;
 
+import com.capgemini.somethingnew.Group;
+import com.capgemini.somethingnew.ParkPollGroupService;
+import com.capgemini.somethingnew.ParkPollGroups;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author advena
  */
+@Service
 public class ParkingGroupFactory {
 
-    public Parking
+    @Autowired
+    ParkPollGroupService pollGroupService;
+
+    public ParkingPlaces getParkingPlaces() {
+        ParkPollGroups parkPollGroups = pollGroupService.getParkPollGroups();
+        ParkingPlaces parkingPlaces = parseParkingPlacesFrom(parkPollGroups);
+        return parkingPlaces;
+    }
+
+    private ParkingPlaces parseParkingPlacesFrom(ParkPollGroups parkPollGroups) {
+        Map<CompanyName, ParkingPlace> parsed = new HashMap<>();
+        Long timestamp = getTimeStampFrom(parkPollGroups.getTimestamp());
+        for (Group parkingGroup : parkPollGroups.getGroup()) { 
+            switch(parkingGroup.getName()) {
+                case("Capgemini rotacyjny"):
+                    parsed.put(CompanyName.CAPGEMINI, createParkingPlaceFrom(parkingGroup, timestamp));
+                    break;
+                case("Idea Leasing"):
+                    parsed.put(CompanyName.IDEA, createParkingPlaceFrom(parkingGroup, timestamp));
+                    break;
+                case("Merck"):
+                    parsed.put(CompanyName.MERCK, createParkingPlaceFrom(parkingGroup, timestamp));
+                    break;
+                case("PORR"):
+                    parsed.put(CompanyName.PORP, createParkingPlaceFrom(parkingGroup, timestamp));
+                    break;
+                case("Pfleiderer"):
+                    parsed.put(CompanyName.PFLEIDERER, createParkingPlaceFrom(parkingGroup, timestamp));
+                    break;
+            }
+        }
+        return new ParkingPlaces(parsed);
+    }
+
+    private ParkingPlace createParkingPlaceFrom(Group parkingGroup, Long timestamp) {
+        ParkingStatus status = new ParkingStatus(parkingGroup.getSpaces(), parkingGroup.getOccupied(), parkingGroup.getFree());
+        return new ParkingPlace(status, timestamp);
+    }
+
+    private Long getTimeStampFrom(String timestamp) {
+        Long time = 1L;
+        try {
+            return new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(timestamp).getTime();
+        } catch (ParseException ex) {
+            ex.printStackTrace();
+        }
+        return time;
+    }
     
 }

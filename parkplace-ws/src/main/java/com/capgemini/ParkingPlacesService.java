@@ -6,21 +6,53 @@
 package com.capgemini;
 
 import com.capgemini.parking.groups.ParkingPlace;
+import com.capgemini.parking.groups.ParkingPlaces;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author advena
  */
+@Service
 class ParkingPlacesService {
 
     @Autowired
     ParkingPlacesRepository parkingPlacesRepository;
 
     ParkingPlaceDTO getForCapgemini() {
-        ParkingPlace capgeminiParkingPlaces = parkingPlacesRepository.getForCapgemini();
+        ParkingPlaces parkingPlaces = getParkingPlaces();
+        ParkingPlace capgeminiParkingPlaces = parkingPlaces.getCapgeminiParkingPlace();
         return capgeminiParkingPlaces.getParkingPlacesDTO();
-        
+
     }
-    
+
+    ParkingPlaceDTO getForIdea() {
+        ParkingPlaces parkingPlaces = getParkingPlaces();
+        ParkingPlace ideaParkingPlaces = parkingPlaces.getIdeaParkingPlace();
+        return ideaParkingPlaces.getParkingPlacesDTO();
+    }
+
+    ParkingPlaceDTO getForMerck() {
+        ParkingPlaces parkingPlaces = getParkingPlaces();
+        ParkingPlace merckParkingPlaces = parkingPlaces.getMerckParkingPlace();
+        return merckParkingPlaces.getParkingPlacesDTO();
+    }
+
+    ParkingPlaceDTO getForPorp() {
+        ParkingPlaces parkingPlaces = getParkingPlaces();
+        ParkingPlace porpParkingPlaces = parkingPlaces.getPorpParkingPlace();
+        return porpParkingPlaces.getParkingPlacesDTO();
+    }
+
+    ParkingPlaceDTO getForPfleiderer() {
+        ParkingPlaces parkingPlaces = getParkingPlaces();
+        ParkingPlace pfleidererParkingPlaces = parkingPlaces.getPfleidererParkingPlace();
+        return pfleidererParkingPlaces.getParkingPlacesDTO();
+    }
+
+    private ParkingPlaces getParkingPlaces() {
+        return parkingPlacesRepository.getParkingPlaces();
+    }
+
 }

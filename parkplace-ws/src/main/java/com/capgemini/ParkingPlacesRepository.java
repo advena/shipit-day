@@ -5,15 +5,23 @@
  */
 package com.capgemini;
 
-import com.capgemini.parking.groups.ParkingPlace;
+import com.capgemini.parking.groups.ParkingGroupFactory;
+import com.capgemini.parking.groups.ParkingPlaces;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author advena
  */
+@Repository
 class ParkingPlacesRepository {
 
-    ParkingPlace getForCapgemini() {
+    @Autowired
+    ParkingGroupFactory factory;
+
+    ParkingPlaces getParkingPlaces() {
+        return factory.getParkingPlaces();
     }
     
 }

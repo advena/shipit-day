@@ -14,9 +14,13 @@ import java.util.Date;
  */
 public class ParkingPlace {
 
-    private CompanyName companyName;
-    private ParkingStatus parkingStatus;
-    private long lastUpdateTimestamp;
+    private final ParkingStatus parkingStatus;
+    private final long lastUpdateTimestamp;
+
+    public ParkingPlace(ParkingStatus parkingStatus, long lastUpdateTimestamp) {
+        this.parkingStatus = parkingStatus;
+        this.lastUpdateTimestamp = lastUpdateTimestamp;
+    }
 
     public ParkingPlaceDTO getParkingPlacesDTO() {
         return new ParkingPlaceDTO(parkingStatus.getFree(), new Date(lastUpdateTimestamp));

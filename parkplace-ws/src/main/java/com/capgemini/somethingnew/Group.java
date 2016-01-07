@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author advena
  */
 @XmlRootElement(name="Group")
-class Group {
+public class Group {
 
     private int id;
     private String name;
@@ -61,6 +61,7 @@ class Group {
         return free;
     }
 
+    @XmlAttribute
     public void setFree(int free) {
         this.free = free;
     }
