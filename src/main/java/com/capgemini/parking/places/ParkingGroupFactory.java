@@ -8,6 +8,7 @@ package com.capgemini.parking.places;
 import com.capgemini.parking.groups.Group;
 import com.capgemini.parking.groups.ParkPollGroupService;
 import com.capgemini.parking.groups.ParkPollGroups;
+import com.capgemini.parking.groups.ParkingPollGroupsConfiguration;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
@@ -24,6 +25,9 @@ public class ParkingGroupFactory {
 
     @Autowired
     ParkPollGroupService pollGroupService;
+
+    @Autowired
+    ParkingPollGroupsConfiguration configuration;
 
     public ParkingPlaces getParkingPlaces() {
         ParkPollGroups parkPollGroups = pollGroupService.getParkPollGroups();
@@ -64,7 +68,7 @@ public class ParkingGroupFactory {
     private Long getTimeStampFrom(String timestamp) {
         Long time = 1L;
         try {
-            return new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(timestamp).getTime();
+            return new SimpleDateFormat(configuration.getDate()).parse(timestamp).getTime();
         } catch (ParseException ex) {
             ex.printStackTrace();
         }

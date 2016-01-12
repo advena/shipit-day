@@ -5,6 +5,7 @@
  */
 package com.capgemini.parking.groups;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,9 +16,12 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class ParkPollGroupService {
 
+    @Autowired
+    ParkingPollGroupsConfiguration configuration;       
+
     public ParkPollGroups getParkPollGroups() {
         RestTemplate restTemplate = new RestTemplate();
-        ParkPollGroups parkPollGroups = restTemplate.getForObject("http://parking.descont.pl/parking.xml", ParkPollGroups.class);
+        ParkPollGroups parkPollGroups = restTemplate.getForObject(configuration.getUrl(), ParkPollGroups.class);
         return parkPollGroups;
     }
 }
