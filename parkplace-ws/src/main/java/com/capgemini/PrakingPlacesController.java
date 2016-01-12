@@ -11,6 +11,10 @@ public class PrakingPlacesController {
     @Autowired
     private ParkingPlacesService parkingPlacesService;
 
+    @RequestMapping("/freeParkplaces")
+    public ParkingPlaceDTO getFreeParkPlaces() {
+        return parkingPlacesService.getForCapgemini();
+    }
     @RequestMapping("/capgemini")
     public ParkingPlaceDTO getCapgemini() {
         return parkingPlacesService.getForCapgemini();
