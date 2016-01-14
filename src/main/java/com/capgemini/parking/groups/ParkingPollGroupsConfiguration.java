@@ -18,8 +18,17 @@ import org.springframework.stereotype.Component;
 public class ParkingPollGroupsConfiguration {
 
     @NotBlank
+    private String timezone;
     private String date;
     private String url;
+
+    public String getTimezone() {
+        return timezone;
+    }
+
+    public void setTimezone(String timezone) {
+        this.timezone = timezone;
+    }
 
     public String getDate() {
         return date;

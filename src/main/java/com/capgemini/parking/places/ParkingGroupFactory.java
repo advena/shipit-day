@@ -13,6 +13,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -67,8 +68,10 @@ public class ParkingGroupFactory {
 
     private Long getTimeStampFrom(String timestamp) {
         Long time = 1L;
-        try {
-            return new SimpleDateFormat(configuration.getDate()).parse(timestamp).getTime();
+        try {           
+            SimpleDateFormat date = new SimpleDateFormat(configuration.getDate());
+            date.setTimeZone(TimeZone.getTimeZone(configuration.getTimezone()));        
+            return date.parse(timestamp).getTime();
         } catch (ParseException ex) {
             ex.printStackTrace();
         }
