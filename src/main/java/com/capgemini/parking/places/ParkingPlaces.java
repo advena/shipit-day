@@ -5,6 +5,7 @@
  */
 package com.capgemini.parking.places;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -12,6 +13,8 @@ import java.util.Map;
  * @author advena
  */
 public class ParkingPlaces {
+
+    public static ParkingPlaces empty = new EmptyParkingPlaces();
 
     private final Map<CompanyName, ParkingPlace> companyParkingPlace;
 
@@ -37,5 +40,43 @@ public class ParkingPlaces {
 
     public ParkingPlace getPorpParkingPlace() {
         return companyParkingPlace.get(CompanyName.PFLEIDERER);  
+    }
+
+    private static class EmptyParkingPlaces extends ParkingPlaces {
+
+        private final ParkingPlace emptyParkingPlaces = new ParkingPlace(new ParkingStatus(666, 666, 666), 1L);
+        
+        public EmptyParkingPlaces() {
+            super(new HashMap<>());
+        }
+
+        @Override
+        public ParkingPlace getPorpParkingPlace() {
+            return emptyParkingPlaces;
+        }
+
+        @Override
+        public ParkingPlace getPfleidererParkingPlace() {
+            return emptyParkingPlaces;
+        }
+
+        @Override
+        public ParkingPlace getMerckParkingPlace() {
+            return emptyParkingPlaces;
+        }
+
+        @Override
+        public ParkingPlace getIdeaParkingPlace() {
+            return emptyParkingPlaces;
+        }
+
+        @Override
+        public ParkingPlace getCapgeminiParkingPlace() {
+            return emptyParkingPlaces;
+        }
+
+        
+
+        
     }
 }

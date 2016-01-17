@@ -5,9 +5,10 @@
  */
 package com.capgemini;
 
-import com.capgemini.parking.places.ParkingPlaceDTO;
 import com.capgemini.parking.places.ParkingPlace;
+import com.capgemini.parking.places.ParkingPlaceDTO;
 import com.capgemini.parking.places.ParkingPlaces;
+import com.capgemini.update.ParkingPlacesContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,10 +17,10 @@ import org.springframework.stereotype.Service;
  * @author advena
  */
 @Service
-class ParkingPlacesService {
+class ParkingPlaceInfoService {
 
     @Autowired
-    ParkingPlacesRepository parkingPlacesRepository;
+    private ParkingPlacesContainer container;
 
     ParkingPlaceDTO getForCapgemini() {
         ParkingPlaces parkingPlaces = getParkingPlaces();
@@ -53,7 +54,7 @@ class ParkingPlacesService {
     }
 
     private ParkingPlaces getParkingPlaces() {
-        return parkingPlacesRepository.getParkingPlaces();
+        return container.getParkingPlaces();
     }
 
 }

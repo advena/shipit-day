@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PrakingPlacesController {
 
     @Autowired
-    private ParkingPlacesService parkingPlacesService;
+    private ParkingPlaceInfoService parkingPlacesService;
 
     @RequestMapping("/freeParkplaces")
     public ParkingPlaceDTO getFreeParkPlaces() {

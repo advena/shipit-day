@@ -6,7 +6,6 @@
 package com.capgemini.parking.places;
 
 import com.capgemini.parking.groups.Group;
-import com.capgemini.parking.groups.ParkPollGroupService;
 import com.capgemini.parking.groups.ParkPollGroups;
 import com.capgemini.parking.groups.ParkingPollGroupsConfiguration;
 import java.text.ParseException;
@@ -25,18 +24,9 @@ import org.springframework.stereotype.Service;
 public class ParkingGroupFactory {
 
     @Autowired
-    ParkPollGroupService pollGroupService;
-
-    @Autowired
     ParkingPollGroupsConfiguration configuration;
 
-    public ParkingPlaces getParkingPlaces() {
-        ParkPollGroups parkPollGroups = pollGroupService.getParkPollGroups();
-        ParkingPlaces parkingPlaces = parseParkingPlacesFrom(parkPollGroups);
-        return parkingPlaces;
-    }
-
-    private ParkingPlaces parseParkingPlacesFrom(ParkPollGroups parkPollGroups) {
+    public ParkingPlaces parseParkingPlacesFrom(ParkPollGroups parkPollGroups) {
         Map<CompanyName, ParkingPlace> parsed = new HashMap<>();
         Long timestamp = getTimeStampFrom(parkPollGroups.getTimestamp());
         for (Group parkingGroup : parkPollGroups.getGroup()) { 
