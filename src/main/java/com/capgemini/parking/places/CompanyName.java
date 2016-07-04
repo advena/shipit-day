@@ -9,7 +9,7 @@ package com.capgemini.parking.places;
  *
  * @author advena
  */
-enum CompanyName {
+public enum CompanyName {
 
     CAPGEMINI,
     PFLEIDERER,
