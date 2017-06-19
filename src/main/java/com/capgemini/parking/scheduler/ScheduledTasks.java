@@ -44,6 +44,7 @@ public class ScheduledTasks {
 	@Scheduled(fixedRate = 15 * 1000)
 	public void reportCurrentTime() {
 
+		try{
 		ParkPollGroups parkGroups = parkPollGroupService.getParkPollGroups();
 		Long timeStamp;
 		try {
@@ -67,6 +68,10 @@ public class ScheduledTasks {
 			}
 
 			lastTimeStamp = timeStamp;
+		}
+		}catch (Exception e) {
+			System.out.println("ScheduledTasks.reportCurrentTime()");
+			e.printStackTrace();
 		}
 
 	}

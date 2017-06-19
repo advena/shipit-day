@@ -13,6 +13,7 @@ public enum CompanyName {
 
     CAPGEMINI,
     PFLEIDERER,
+    PFLEIDERER_ROTACYJNY,
     IDEA,
     MERCK,
     PORP;

@@ -38,4 +38,8 @@ public class ParkingPlaces {
     public ParkingPlace getPorpParkingPlace() {
         return companyParkingPlace.get(CompanyName.PFLEIDERER);  
     }
+    
+    public Map<CompanyName, ParkingPlace> getAllParkingPlaces(){
+    	return companyParkingPlace;
+    }
 }

@@ -1,6 +1,10 @@
 package com.capgemini;
 
+import com.capgemini.parking.places.CompanyName;
 import com.capgemini.parking.places.ParkingPlaceDTO;
+
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +19,7 @@ public class PrakingPlacesController {
     public ParkingPlaceDTO getFreeParkPlaces() {
         return parkingPlacesService.getForCapgemini();
     }
+    
     @RequestMapping("/capgemini")
     public ParkingPlaceDTO getCapgemini() {
         return parkingPlacesService.getForCapgemini();
@@ -33,9 +38,15 @@ public class PrakingPlacesController {
     public ParkingPlaceDTO getForPorp() {
         return parkingPlacesService.getForPorp();
     }
+    
     @RequestMapping("/pfleiderer")
     public ParkingPlaceDTO getForPfleiderer() {
         return parkingPlacesService.getForPfleiderer();
+    }
+    
+    @RequestMapping("/allFreeParkPlaces")
+    public Map<CompanyName, ParkingPlaceDTO> getAllFreeParkPlaces() {
+        return parkingPlacesService.getAllFreePlaces();
     }
 
 }

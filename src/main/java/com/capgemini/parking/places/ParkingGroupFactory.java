@@ -56,6 +56,9 @@ public class ParkingGroupFactory {
                 case("Pfleiderer"):
                     parsed.put(CompanyName.PFLEIDERER, createParkingPlaceFrom(parkingGroup, timestamp));
                     break;
+                case("Pfleiderer rotacyjny"):
+                    parsed.put(CompanyName.PFLEIDERER_ROTACYJNY, createParkingPlaceFrom(parkingGroup, timestamp));
+                    break;    
             }
         }
         return new ParkingPlaces(parsed);
